@@ -1,4 +1,4 @@
-import ExpenseItem from './components/ExpenseItem';
+import Expenses from './components/Expenses';
 import expenses from './expenses';
 
 function App() {
@@ -6,10 +6,7 @@ function App() {
     <div>
       <h2>Let's get started!</h2>
       <p>This is also visible!</p>
-      <ExpenseItem expense={expenses[0]}></ExpenseItem>
-      <ExpenseItem expense={expenses[1]}></ExpenseItem>
-      <ExpenseItem expense={expenses[2]}></ExpenseItem>
-      <ExpenseItem expense={expenses[3]}></ExpenseItem>
+      <Expenses expenses={expenses}/>
     </div>
   );
 }
