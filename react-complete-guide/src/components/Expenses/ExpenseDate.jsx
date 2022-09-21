@@ -1,4 +1,4 @@
-import './ExpenseDate.css'
+import './ExpenseDate.css';
 
 const ExpenseDate = ({ date }) => {
   const month = date.toLocaleString('en-US', { month: 'long' });
@@ -11,7 +11,7 @@ const ExpenseDate = ({ date }) => {
       <div className='expense-date__day'>{day}</div>
       <div className='expense-date__year'>{year}</div>
     </div>
-  )
-}
+  );
+};
 
-export default ExpenseDate
+export default ExpenseDate;
