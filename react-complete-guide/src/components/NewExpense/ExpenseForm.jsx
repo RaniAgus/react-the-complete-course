@@ -3,34 +3,21 @@ import { useState } from 'react';
 import './ExpenseForm.css'
 
 const ExpenseForm = () => {
-  const [userInput, setUserInput] = useState({
-    title: '',
-    amount: '',
-    date: '',
-  });
+  const [title, setTitle] = useState('');
+  const [amount, setAmount] = useState('');
+  const [date, setDate] = useState('');
 
   const titleChangeHandler = (event) => {
-    // Para actualizar el estado dependiendo del estado previo, usamos
-    // un callback, así evitamos condiciones de carrera
-    setUserInput((prevState) => ({
-      ...prevState,
-      title: event.target.value,
-    }));
+    setTitle(event.target.value);
   };
 
   const amountChangeHandler = (event) => {
     // Siempre por defecto se recibe un string, aunque sea number o Date
-    setUserInput((prevState) => ({
-      ...prevState,
-      amount: event.target.value,
-    }));
+    setAmount(event.target.value);
   };
 
   const dateChangeHandler = (event) => {
-    setUserInput((prevState) => ({
-      ...prevState,
-      date: event.target.value,
-    }));
+    setDate(event.target.value);
   };
 
   return (
