@@ -4,9 +4,13 @@ import NewExpense from './components/NewExpense';
 import expenses from './expenses';
 
 const App = () => {
+  const addExpenseHandler = (expense) => {
+    expenses.push(expense);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses}/>
     </div>
   );
