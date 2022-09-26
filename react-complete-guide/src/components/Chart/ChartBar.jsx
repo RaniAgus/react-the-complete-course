@@ -1,7 +1,7 @@
 import './ChartBar.css';
 
 const ChartBar = ({ label, value, maxValue }) => {
-  const barFillHeight = maxValue > 0 ? Math.round(value / maxValue) * 100 : 0;
+  const barFillHeight = maxValue > 0 ? Math.round(value / maxValue * 100) : 0;
 
   return (
     <div className='chart-bar'>

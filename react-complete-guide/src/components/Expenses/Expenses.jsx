@@ -4,6 +4,7 @@ import ExpensesList from './ExpensesList';
 
 import './Expenses.css';
 import { useState } from 'react';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = ({ expenses }) => {
   // - Los hooks solo deben ser invocados dentro de un componente
@@ -25,6 +26,7 @@ const Expenses = ({ expenses }) => {
       <ExpensesFilter options={yearOptions}
         selectedYear={selectedYear}
         onFilterExpenses={filterExpensesHandler} />
+      <ExpensesChart filteredExpenses={filteredExpenses}/>
       <ExpensesList filteredExpenses={filteredExpenses}/>
     </Card>
   );

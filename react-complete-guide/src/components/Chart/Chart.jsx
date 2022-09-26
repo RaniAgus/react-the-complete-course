@@ -2,7 +2,9 @@ import ChartBar from './ChartBar';
 
 import './Chart.css';
 
-const Chart = ({ dataPoints, maxValue }) => {
+const Chart = ({ dataPoints }) => {
+  const maxValue = Math.max(...dataPoints.map((it) => it.value));
+
   return (
     <div className='chart'>
       {
