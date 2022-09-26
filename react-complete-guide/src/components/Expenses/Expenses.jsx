@@ -6,8 +6,10 @@ import './Expenses.css';
 import { useState } from 'react';
 
 const Expenses = ({ expenses }) => {
-  // los hooks solo deben ser invocados dentro de un componente
+  // - Los hooks solo deben ser invocados dentro de un componente
   // NO invocar dentro de una nested function
+  // - Para actualizar el estado dependiendo del estado previo, usamos
+  // un callback, así evitamos condiciones de carrera
   const [selectedYear, setSelectedYear] = useState(2020);
 
   const filterExpensesHandler = (year) => {
