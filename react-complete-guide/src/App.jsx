@@ -1,11 +1,16 @@
 // import React from 'react';
+import { useState } from 'react';
 import Expenses from './components/Expenses';
 import NewExpense from './components/NewExpense';
-import expenses from './expenses';
+import EXPENSES_DATA from './expenses';
 
 const App = () => {
+  const [expenses, setExpenses] = useState(EXPENSES_DATA);
+
+  // - Para actualizar el estado dependiendo del estado previo, usamos
+  // un callback, así evitamos condiciones de carrera
   const addExpenseHandler = (expense) => {
-    expenses.push(expense);
+    setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
 
   return (
