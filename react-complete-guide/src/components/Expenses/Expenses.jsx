@@ -22,6 +22,10 @@ const Expenses = ({ expenses }) => {
         selectedYear={selectedYear}
         onFilterExpenses={filterExpensesHandler} />
       {
+        // Las keys sirven para evitar volver a renderizar todos los items del
+        // array cada vez que se actualice la lista, ganando performance.
+        // También, React chequea la longitud del array para saber si volver a
+        // renderizar, por lo que no usar keys también puede causar bugs.
         expenses.map((expense) => (
           <ExpenseItem key={expense.id} expense={expense}/>
         ))

@@ -11,7 +11,9 @@ const ExpensesFilter = ({ options, selectedYear, onFilterExpenses }) => {
         <label>Filter by year</label>
         <select value={selectedYear} onChange={yearChangeHandler}>
           {
-            options.map((year) => <option key={year} value={year}>{year}</option>)
+            options.map((year) => (
+              <option key={year} value={year}>{year}</option>
+            ))
           }
         </select>
       </div>
