@@ -16,6 +16,10 @@ const Expenses = ({ expenses }) => {
 
   const yearOptions = [...new Set(expenses.map((it) => it.date.getFullYear()))];
 
+  const filteredExpenses = expenses.filter((expense) => {
+    return expense.date.getFullYear() === selectedYear;
+  });
+
   return (
     <Card className='expenses'>
       <ExpensesFilter options={yearOptions}
@@ -26,7 +30,7 @@ const Expenses = ({ expenses }) => {
         // array cada vez que se actualice la lista, ganando performance.
         // También, React chequea la longitud del array para saber si volver a
         // renderizar, por lo que no usar keys también puede causar bugs.
-        expenses.map((expense) => (
+        filteredExpenses.map((expense) => (
           <ExpenseItem key={expense.id} expense={expense}/>
         ))
       }
