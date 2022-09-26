@@ -5,10 +5,3 @@
   width: 50rem;
   max-width: 95%;
 }
-
-.no-expenses-label {
-  flex: 1;
-  margin: 0 1rem;
-  color: white;
-  padding: 2rem;
-}
